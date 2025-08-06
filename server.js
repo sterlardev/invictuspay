@@ -51,7 +51,7 @@ app.post('/geradorinvictus', async (req, res) => {
         const {
             name = 'Cliente Manu Gourmet',
             email = 'cliente@manugourmet.com',
-            document = '00000000000',
+            document = '23167861894',
             phone = '11940028922'
         } = customer;
 
@@ -72,23 +72,23 @@ app.post('/geradorinvictus', async (req, res) => {
 
         const payload = {
             amount: amount,
-            offer_hash: '7becb',
+            offer_hash: '9cfdc',
             payment_method: 'pix',
             customer: {
                 name: name,
                 email: email,
-                phone_number: cleanPhone,
-                document: cleanCpf,
+                phone_number: '11940028922',
+                document: '23167861894',
                 street_name: 'Rua Exemplo',
                 number: '123',
                 complement: 'Ap 101',
                 neighborhood: 'Centro',
                 city: 'São Paulo',
                 state: 'SP',
-                zip_code: '01234567'
+                zip_code: '01502000'
             },
             cart: cart.length > 0 ? cart.map((item, index) => ({
-                product_hash: 'manu_produto_simples',
+                product_hash: 'manuudoces',
                 title: item.name || 'Produto',
                 cover: null,
                 price: item.unit_price || Math.round(amount / (cart.reduce((sum, i) => sum + (i.quantity || 1), 0))),
@@ -99,7 +99,7 @@ app.post('/geradorinvictus', async (req, res) => {
                 offer_id: 9535
             })) : [
                 {
-                    product_hash: 'manu_produto_simples',
+                    product_hash: 'manuudoces',
                     title: 'Produto Digital',
                     cover: null,
                     price: amount,
